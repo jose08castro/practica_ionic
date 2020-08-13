@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start" color="primary" menu="first"></ion-menu-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let c of componentes | async" [routerLink]="c.redirectTo" detail>
+      <ion-icon slot="start" [md]="c.icon" [ios]="c.icon"></ion-icon>
+      <ion-label>{{c.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

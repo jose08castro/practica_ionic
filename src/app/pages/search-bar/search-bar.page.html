@@ -1,0 +1,17 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    <ion-back-button text="Atrás" defaultHref="/"></ion-back-button>
+  </ion-buttons>
+    <ion-title text-capitalize>Search Bar</ion-title>
+  </ion-toolbar>
+  <ion-searchbar (ionChange)="buscar($event)" animated ></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let album of albumes | filtro: textoBuscar: 'title'">
+      {{album.title}}
+    </ion-item>
+  </ion-list>
+</ion-content>
